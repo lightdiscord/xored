@@ -2,7 +2,7 @@ use std::io::{self, Read, Write};
 use std::env;
 
 fn main() -> io::Result<()> {
-    let secret = env::args().nth(1).unwrap_or(String::new());
+    let secret = env::args().nth(1).unwrap_or(char::from(0).to_string());
     let mut file = Vec::new();
 
     eprintln!(r#"secret = "{}";"#, secret);
